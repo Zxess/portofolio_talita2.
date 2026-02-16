@@ -246,6 +246,231 @@
         box-shadow: 0 15px 50px rgba(102, 126, 234, 0.4);
     }
 
+    /* Voice Note Toggle Styles */
+    .voice-note-container {
+        position: fixed;
+        bottom: 30px;
+        left: 30px;
+        z-index: 50;
+        max-width: 320px;
+        transition: all 0.3s ease;
+    }
+
+    .voice-note-container.hidden {
+        transform: translateX(-120%);
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    .voice-note-card {
+        background: linear-gradient(135deg, #ff6b6b 0%, #ff8e53 100%);
+        border-radius: 20px;
+        padding: 15px;
+        box-shadow: 0 10px 40px rgba(255, 107, 107, 0.3);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        transition: all 0.3s ease;
+        animation: slideInLeft 0.5s ease;
+        position: relative;
+    }
+
+    @keyframes slideInLeft {
+        from {
+            transform: translateX(-100%);
+            opacity: 0;
+        }
+        to {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+
+    .voice-note-card:hover {
+        transform: scale(1.02);
+        box-shadow: 0 15px 50px rgba(255, 107, 107, 0.5);
+    }
+
+    .voice-note-header {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 12px;
+    }
+
+    .voice-note-avatar {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        overflow: hidden;
+        border: 3px solid white;
+    }
+
+    .voice-note-avatar img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .voice-note-info {
+        flex: 1;
+    }
+
+    .voice-note-info h4 {
+        color: white;
+        font-weight: bold;
+        margin: 0;
+        font-size: 16px;
+    }
+
+    .voice-note-info p {
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 12px;
+        margin: 2px 0 0;
+    }
+
+    .voice-close-btn {
+        background: rgba(255, 255, 255, 0.2);
+        border: none;
+        color: white;
+        cursor: pointer;
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+        font-size: 12px;
+    }
+
+    .voice-close-btn:hover {
+        background: rgba(255, 255, 255, 0.4);
+        transform: rotate(90deg);
+    }
+
+    .voice-toggle-btn {
+        position: fixed;
+        bottom: 30px;
+        left: 30px;
+        background: linear-gradient(135deg, #ff6b6b 0%, #ff8e53 100%);
+        border: none;
+        color: white;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        cursor: pointer;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        z-index: 49;
+        box-shadow: 0 10px 40px rgba(255, 107, 107, 0.3);
+        transition: all 0.3s ease;
+        animation: pulse 2s infinite;
+    }
+
+    .voice-toggle-btn.show {
+        display: flex;
+    }
+
+    .voice-toggle-btn:hover {
+        transform: scale(1.1);
+        box-shadow: 0 15px 50px rgba(255, 107, 107, 0.5);
+    }
+
+    .voice-wave {
+        display: flex;
+        align-items: center;
+        gap: 3px;
+        height: 40px;
+        margin: 10px 0;
+    }
+
+    .wave-bar {
+        width: 4px;
+        height: 20%;
+        background: rgba(255, 255, 255, 0.3);
+        border-radius: 2px;
+        transition: height 0.2s ease;
+    }
+
+    .voice-wave.playing .wave-bar {
+        animation: waveAnimation 1s ease-in-out infinite;
+    }
+
+    .wave-bar:nth-child(1) { animation-delay: 0s; }
+    .wave-bar:nth-child(2) { animation-delay: 0.1s; }
+    .wave-bar:nth-child(3) { animation-delay: 0.2s; }
+    .wave-bar:nth-child(4) { animation-delay: 0.3s; }
+    .wave-bar:nth-child(5) { animation-delay: 0.4s; }
+    .wave-bar:nth-child(6) { animation-delay: 0.5s; }
+    .wave-bar:nth-child(7) { animation-delay: 0.6s; }
+    .wave-bar:nth-child(8) { animation-delay: 0.7s; }
+    .wave-bar:nth-child(9) { animation-delay: 0.8s; }
+    .wave-bar:nth-child(10) { animation-delay: 0.9s; }
+
+    @keyframes waveAnimation {
+        0%, 100% { height: 20%; background: rgba(255, 255, 255, 0.3); }
+        50% { height: 100%; background: white; }
+    }
+
+    .voice-note-controls {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    .voice-play-btn {
+        width: 40px;
+        height: 40px;
+        background: white;
+        border: none;
+        border-radius: 50%;
+        color: #ff6b6b;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 16px;
+        transition: all 0.3s ease;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .voice-play-btn:hover {
+        transform: scale(1.1);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .voice-play-btn.playing {
+        animation: pulse 1.5s infinite;
+    }
+
+    .voice-timer {
+        color: white;
+        font-size: 14px;
+        font-weight: bold;
+        background: rgba(0, 0, 0, 0.2);
+        padding: 5px 10px;
+        border-radius: 15px;
+    }
+
+    .voice-message {
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 15px;
+        padding: 10px 15px;
+        margin-top: 10px;
+        color: white;
+        font-size: 13px;
+        font-style: italic;
+        border-left: 3px solid white;
+    }
+
+    .voice-message i {
+        margin-right: 5px;
+        color: #ffd700;
+    }
+
     @media (max-width: 768px) {
         .music-player {
             bottom: 15px;
@@ -257,6 +482,17 @@
         .music-toggle-btn {
             bottom: 15px;
             right: 15px;
+        }
+        
+        .voice-note-container {
+            bottom: 100px;
+            left: 15px;
+            max-width: 280px;
+        }
+        
+        .voice-toggle-btn {
+            bottom: 100px;
+            left: 15px;
         }
     }
 
@@ -380,35 +616,31 @@
     
     <!-- Content -->
     <div class="relative z-10 text-center">
-        <!-- Animated Logo -->
+        <!-- Animated Text -->
+        <h1 class="text-7xl md:text-8xl font-bold text-white mb-4 opacity-0 animate-fadeInUp" style="animation-delay: 0.3s">
+            Welcome
+        </h1>
         
-            <!-- Animated Text -->
-            <h1 class="text-7xl md:text-8xl font-bold text-white mb-4 opacity-0 animate-fadeInUp" style="animation-delay: 0.3s">
-                Welcome
-            </h1>
-            
-            <!-- Name with Typing Effect -->
-            <div class="h-20 overflow-hidden mb-8">
-                <p class="text-3xl md:text-4xl text-white/90 font-light">
-                    <span id="typed-welcome"></span>
-                </p>
-            </div>
-            
-            <!-- Enter Button -->
-            <button onclick="openPortfolio()" class="group relative px-12 py-5 bg-white text-gray-900 rounded-full font-bold text-xl overflow-hidden hover:text-white transition-all duration-300 shadow-2xl hover:shadow-3xl transform hover:scale-105">
-                <span class="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-600 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></span>
-                <span class="relative z-10 flex items-center gap-3">
-
-                    Buka Portofolio
-                    <i class="fas fa-arrow-right group-hover:translate-x-2 transition-transform"></i>
-                </span>
-            </button>
-            
-            <!-- Small Hint -->
-            <p class="text-white/60 mt-6 text-sm animate-pulse">
-                ✨ Klik tombol di atas untuk masuk ✨
+        <!-- Name with Typing Effect -->
+        <div class="h-20 overflow-hidden mb-8">
+            <p class="text-3xl md:text-4xl text-white/90 font-light">
+                <span id="typed-welcome"></span>
             </p>
         </div>
+        
+        <!-- Enter Button -->
+        <button onclick="openPortfolio()" class="group relative px-12 py-5 bg-white text-gray-900 rounded-full font-bold text-xl overflow-hidden hover:text-white transition-all duration-300 shadow-2xl hover:shadow-3xl transform hover:scale-105">
+            <span class="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-600 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></span>
+            <span class="relative z-10 flex items-center gap-3">
+                Buka Portofolio
+                <i class="fas fa-arrow-right group-hover:translate-x-2 transition-transform"></i>
+            </span>
+        </button>
+        
+        <!-- Small Hint -->
+        <p class="text-white/60 mt-6 text-sm animate-pulse">
+            ✨ Klik tombol di atas untuk masuk ✨
+        </p>
     </div>
 </div>
 
@@ -442,6 +674,60 @@
     </div>
 </nav>
 
+<!-- Voice Note Component dengan Toggle -->
+<div class="voice-note-container" id="voiceNoteContainer">
+    <div class="voice-note-card">
+        <div class="voice-note-header">
+            <div class="voice-note-avatar">
+                <img src="{{ asset('images/talita.jpeg') }}" alt="Talita">
+            </div>
+            <div class="voice-note-info">
+                <h4>Talita's Voice Note</h4>
+                <p>klik play untuk dengar 😊</p>
+            </div>
+            <button class="voice-close-btn" onclick="closeVoiceNote()">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        
+        <!-- Visualisasi Gelombang Suara -->
+        <div class="voice-wave" id="voiceWave">
+            <div class="wave-bar"></div>
+            <div class="wave-bar"></div>
+            <div class="wave-bar"></div>
+            <div class="wave-bar"></div>
+            <div class="wave-bar"></div>
+            <div class="wave-bar"></div>
+            <div class="wave-bar"></div>
+            <div class="wave-bar"></div>
+            <div class="wave-bar"></div>
+            <div class="wave-bar"></div>
+        </div>
+        
+        <div class="voice-note-controls">
+            <button class="voice-play-btn" id="voicePlayBtn" onclick="toggleVoiceNote()">
+                <i class="fas fa-play" id="voicePlayIcon"></i>
+            </button>
+            <span class="voice-timer" id="voiceTimer">0:00 / 0:30</span>
+        </div>
+        
+        <div class="voice-message">
+            <i class="fas fa-quote-left"></i>
+            Halo! Aku Talita. Makasih udah mampir ke portofolio aku. Jangan lupa follow ig aku ya! 😘
+        </div>
+        
+        <!-- Audio element untuk voice note -->
+        <audio id="voiceAudio" loop>
+            <source src="{{ asset('audio/voice-note.mp3') }}" type="audio/mpeg">
+        </audio>
+    </div>
+</div>
+
+<!-- Voice Note Toggle Button (shown when voice note is hidden) -->
+<button class="voice-toggle-btn" id="voiceToggleBtn" onclick="showVoiceNote()">
+    <i class="fas fa-microphone"></i>
+</button>
+
 <!-- Main Content Wrapper (initially hidden) -->
 <div id="main-content" class="opacity-0 transition-opacity duration-1000">
     <!-- Hero Section dengan Particle Effect -->
@@ -460,7 +746,7 @@
                 
                 <!-- Nama dengan Gradient Text -->
                 <h1 class="text-6xl md:text-7xl font-bold text-white mb-4">
-                    Talita <span class="gradient-text">.</span>
+                    Talita <span class="gradient-text">Bocil</span>
                 </h1>
                 
                 <!-- Title dengan Typewriter Effect -->
@@ -472,8 +758,6 @@
                 <p class="text-xl text-white mb-12 max-w-3xl mx-auto opacity-80 leading-relaxed">
                     Talita adalah seorang web developer berbakat kayanya.. Dengan keahlian dalam Nangis, suka matcha, dan suka orang yang gila, Talita mampu mengubah bahagia menjadi sedih dengan hitungan detik.
                 </p>
-                
-                
             </div>
         </div>
     </section>
@@ -492,7 +776,7 @@
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <div class="group relative overflow-hidden rounded-2xl h-96 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
-                    <img src="{{ asset('images/odt.jpeg') }}" alt="ODT" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <img src="{{ asset('images/odt.jpeg') }}" alt="Best Developer Award" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                     <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     <div class="absolute inset-0 flex flex-col justify-end p-6 text-white">
                         <div class="text-4xl mb-3">
@@ -504,7 +788,7 @@
                 </div>
 
                 <div class="group relative overflow-hidden rounded-2xl h-96 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
-                    <img src="{{ asset('images/oprec.jpeg') }}" alt="Oprec" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <img src="{{ asset('images/oprec.jpeg') }}" alt="100+ Projects" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                     <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     <div class="absolute inset-0 flex flex-col justify-end p-6 text-white">
                         <div class="text-4xl mb-3">
@@ -516,7 +800,7 @@
                 </div>
 
                 <div class="group relative overflow-hidden rounded-2xl h-96 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
-                    <img src="{{ asset('images/kalibata.jpeg') }}" alt="Kalibata" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <img src="{{ asset('images/kalibata.jpeg') }}" alt="Certified Developer" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                     <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     <div class="absolute inset-0 flex flex-col justify-end p-6 text-white">
                         <div class="text-4xl mb-3">
@@ -528,7 +812,7 @@
                 </div>
 
                 <div class="group relative overflow-hidden rounded-2xl h-96 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
-                    <img src="{{ asset('images/fekasio.jpeg') }}" alt="Fekasio" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <img src="{{ asset('images/fekasio.jpeg') }}" alt="Featured in Tech News" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                     <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     <div class="absolute inset-0 flex flex-col justify-end p-6 text-white">
                         <div class="text-4xl mb-3">
@@ -540,7 +824,7 @@
                 </div>
 
                 <div class="group relative overflow-hidden rounded-2xl h-96 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
-                    <img src="{{ asset('images/gathos.jpeg') }}" alt="Gathos" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <img src="{{ asset('images/gathos.jpeg') }}" alt="Community Leader" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                     <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     <div class="absolute inset-0 flex flex-col justify-end p-6 text-white">
                         <div class="text-4xl mb-3">
@@ -552,12 +836,11 @@
                 </div>
 
                 <div class="group relative overflow-hidden rounded-2xl h-96 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
-                    <img src="{{ asset('images/lomba.jpeg') }}" alt="Lomba Sigap Terpana" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <img src="{{ asset('images/lomba.jpeg') }}" alt="Open Source Contributor" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                     <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     <div class="absolute inset-0 flex flex-col justify-end p-6 text-white">
                         <div class="text-4xl mb-3">
                             <i class="fas fa-code-branch"></i>
-                        </div>
                         <h3 class="text-2xl font-bold mb-2">Lomba Sigap Terpana</h3>
                         <p class="text-sm opacity-90">Juara </p>
                     </div>
@@ -785,12 +1068,37 @@
     </section>
 </div>
 
+<!-- Music Player (Background Music) -->
+<div class="music-player hidden" id="musicPlayer">
+    <div class="music-player-header">
+        <div class="music-player-title">
+            <i class="fas fa-music"></i>
+            Background Music
+        </div>
+        <button class="music-close-btn" onclick="closeMusicPlayer()">
+            <i class="fas fa-times"></i>
+        </button>
+    </div>
+    <audio id="backgroundMusic" loop>
+        <source src="{{ asset('audio/background-music.mp3') }}" type="audio/mpeg">
+    </audio>
+    <div class="player-controls">
+        <button onclick="playMusic()"><i class="fas fa-play"></i> Play</button>
+        <button onclick="pauseMusic()"><i class="fas fa-pause"></i> Pause</button>
+    </div>
+</div>
+
+<!-- Music Toggle Button (shown when player is hidden) -->
+<button class="music-toggle-btn" id="musicToggleBtn" onclick="showMusicPlayer()">
+    <i class="fas fa-music"></i>
+</button>
+
 <!-- Add Typed.js for typewriter effect -->
 <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1"></script>
 
 <script>
-    // Welcome Screen Logic - HANYA TAMPIL, TIDAK OTOMATIS HILANG
+    // Welcome Screen Logic
     const welcomeSplash = document.getElementById('welcome-splash');
     const mainContent = document.getElementById('main-content');
     
@@ -811,17 +1119,14 @@
         cursorChar: '|'
     });
     
-    // Function to open portfolio (called by button)
+    // Function to open portfolio
     function openPortfolio() {
-        // Hide welcome screen with animation
         welcomeSplash.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
         welcomeSplash.style.opacity = '0';
         welcomeSplash.style.transform = 'scale(1.1)';
         
-        // Show main content
         mainContent.style.opacity = '1';
         
-        // Trigger confetti
         confetti({
             particleCount: 150,
             spread: 70,
@@ -829,13 +1134,12 @@
             colors: ['#667eea', '#764ba2', '#ffffff', '#ff6b6b']
         });
         
-        // Remove welcome screen from DOM after animation
         setTimeout(() => {
             welcomeSplash.style.display = 'none';
         }, 1000);
     }
     
-    // Add floating particles to welcome screen
+    // Add floating particles
     function createParticles() {
         const container = document.getElementById('welcome-splash');
         for (let i = 0; i < 50; i++) {
@@ -866,11 +1170,11 @@
         });
     });
 
-    // SCROLL FUNCTION - Untuk navbar
+    // Scroll function for navbar
     function scrollToSection(sectionId) {
         const element = document.getElementById(sectionId);
         if (element) {
-            const navbarHeight = 70; // Tinggi navbar
+            const navbarHeight = 70;
             const elementPosition = element.offsetTop - navbarHeight;
             
             window.scrollTo({
@@ -988,5 +1292,117 @@
             document.getElementById('mobileMenu').classList.add('hidden');
         });
     });
+
+    // Voice Note Toggle Functionality
+    const voiceNoteContainer = document.getElementById('voiceNoteContainer');
+    const voiceToggleBtn = document.getElementById('voiceToggleBtn');
+
+    // Voice Note Functionality
+    let voiceAudio = document.getElementById('voiceAudio');
+    let voicePlayBtn = document.getElementById('voicePlayBtn');
+    let voicePlayIcon = document.getElementById('voicePlayIcon');
+    let voiceTimer = document.getElementById('voiceTimer');
+    let voiceWave = document.getElementById('voiceWave');
+    let isVoicePlaying = false;
+
+    function closeVoiceNote() {
+        // Pause audio jika sedang playing
+        if (isVoicePlaying) {
+            voiceAudio.pause();
+            voicePlayIcon.className = 'fas fa-play';
+            voiceWave.classList.remove('playing');
+            voicePlayBtn.classList.remove('playing');
+            isVoicePlaying = false;
+        }
+        
+        // Hide voice note container
+        voiceNoteContainer.classList.add('hidden');
+        voiceToggleBtn.classList.add('show');
+    }
+
+    function showVoiceNote() {
+        // Show voice note container
+        voiceNoteContainer.classList.remove('hidden');
+        voiceToggleBtn.classList.remove('show');
+    }
+
+    function toggleVoiceNote() {
+        if (isVoicePlaying) {
+            voiceAudio.pause();
+            voicePlayIcon.className = 'fas fa-play';
+            voiceWave.classList.remove('playing');
+            voicePlayBtn.classList.remove('playing');
+        } else {
+            voiceAudio.play();
+            voicePlayIcon.className = 'fas fa-pause';
+            voiceWave.classList.add('playing');
+            voicePlayBtn.classList.add('playing');
+        }
+        isVoicePlaying = !isVoicePlaying;
+    }
+
+    voiceAudio.addEventListener('timeupdate', function() {
+        let minutes = Math.floor(voiceAudio.currentTime / 60);
+        let seconds = Math.floor(voiceAudio.currentTime % 60);
+        let totalMinutes = Math.floor(voiceAudio.duration / 60);
+        let totalSeconds = Math.floor(voiceAudio.duration % 60);
+        
+        if (isNaN(totalMinutes)) totalMinutes = 0;
+        if (isNaN(totalSeconds)) totalSeconds = 30;
+        
+        voiceTimer.textContent = `${minutes}:${seconds.toString().padStart(2, '0')} / ${totalMinutes}:${totalSeconds.toString().padStart(2, '0')}`;
+    });
+
+    voiceAudio.addEventListener('ended', function() {
+        isVoicePlaying = false;
+        voicePlayIcon.className = 'fas fa-play';
+        voiceWave.classList.remove('playing');
+        voicePlayBtn.classList.remove('playing');
+        voiceTimer.textContent = '0:00 / 0:30';
+    });
+
+    function animateWave() {
+        if (isVoicePlaying) {
+            const bars = document.querySelectorAll('.wave-bar');
+            bars.forEach(bar => {
+                let height = Math.random() * 100;
+                bar.style.height = height + '%';
+            });
+            requestAnimationFrame(animateWave);
+        }
+    }
+
+    voiceAudio.addEventListener('play', function() {
+        animateWave();
+    });
+
+    // Music Player Functionality
+    const backgroundMusic = document.getElementById('backgroundMusic');
+    const musicPlayer = document.getElementById('musicPlayer');
+    const musicToggleBtn = document.getElementById('musicToggleBtn');
+
+    function playMusic() {
+        backgroundMusic.play();
+    }
+
+    function pauseMusic() {
+        backgroundMusic.pause();
+    }
+
+    function closeMusicPlayer() {
+        musicPlayer.classList.add('hidden');
+        musicToggleBtn.classList.add('show');
+    }
+
+    function showMusicPlayer() {
+        musicPlayer.classList.remove('hidden');
+        musicToggleBtn.classList.remove('show');
+    }
+
+    // Pastikan voice note muncul pertama kali
+    setTimeout(() => {
+        voiceNoteContainer.classList.remove('hidden');
+        voiceToggleBtn.classList.remove('show');
+    }, 1000);
 </script>
 @endsection
