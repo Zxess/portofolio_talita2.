@@ -492,7 +492,7 @@
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <div class="group relative overflow-hidden rounded-2xl h-96 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
-                    <img src="{{ asset('images/odt.jpeg') }}" alt="Best Developer Award" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <img src="{{ asset('images/odt.jpeg') }}" alt="ODT" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                     <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     <div class="absolute inset-0 flex flex-col justify-end p-6 text-white">
                         <div class="text-4xl mb-3">
@@ -504,7 +504,7 @@
                 </div>
 
                 <div class="group relative overflow-hidden rounded-2xl h-96 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
-                    <img src="{{ asset('images/oprec.jpeg') }}" alt="100+ Projects" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <img src="{{ asset('images/oprec.jpeg') }}" alt="Oprec" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                     <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     <div class="absolute inset-0 flex flex-col justify-end p-6 text-white">
                         <div class="text-4xl mb-3">
@@ -516,7 +516,7 @@
                 </div>
 
                 <div class="group relative overflow-hidden rounded-2xl h-96 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
-                    <img src="{{ asset('images/kalibata.jpeg') }}" alt="Certified Developer" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <img src="{{ asset('images/kalibata.jpeg') }}" alt="Kalibata" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                     <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     <div class="absolute inset-0 flex flex-col justify-end p-6 text-white">
                         <div class="text-4xl mb-3">
@@ -528,7 +528,7 @@
                 </div>
 
                 <div class="group relative overflow-hidden rounded-2xl h-96 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
-                    <img src="{{ asset('images/fekasio.jpeg') }}" alt="Featured in Tech News" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <img src="{{ asset('images/fekasio.jpeg') }}" alt="Fekasio" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                     <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     <div class="absolute inset-0 flex flex-col justify-end p-6 text-white">
                         <div class="text-4xl mb-3">
@@ -540,7 +540,7 @@
                 </div>
 
                 <div class="group relative overflow-hidden rounded-2xl h-96 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
-                    <img src="{{ asset('images/gathos.jpeg') }}" alt="Community Leader" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <img src="{{ asset('images/gathos.jpeg') }}" alt="Gathos" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                     <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     <div class="absolute inset-0 flex flex-col justify-end p-6 text-white">
                         <div class="text-4xl mb-3">
@@ -552,11 +552,12 @@
                 </div>
 
                 <div class="group relative overflow-hidden rounded-2xl h-96 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
-                    <img src="{{ asset('images/lomba.jpeg') }}" alt="Open Source Contributor" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <img src="{{ asset('images/lomba.jpeg') }}" alt="Lomba Sigap Terpana" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                     <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     <div class="absolute inset-0 flex flex-col justify-end p-6 text-white">
                         <div class="text-4xl mb-3">
                             <i class="fas fa-code-branch"></i>
+                        </div>
                         <h3 class="text-2xl font-bold mb-2">Lomba Sigap Terpana</h3>
                         <p class="text-sm opacity-90">Juara </p>
                     </div>

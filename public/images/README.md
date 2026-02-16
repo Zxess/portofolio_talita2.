@@ -11,13 +11,7 @@ This folder contains all images used throughout the portfolio website. Place you
 **Recommended size:** 500x400px (16:10 aspect ratio)
 **Format:** JPG or PNG
 
-## Achievement Images (6 Achievement Cards)
-- `achievement-award.jpg` - Best Developer Award
-- `achievement-projects.jpg` - 100+ Projects Completed
-- `achievement-certified.jpg` - Certified Developer
-- `achievement-featured.jpg` - Featured in Tech News
-- `achievement-community.jpg` - Community Leader
-- `achievement-opensource.jpg` - Open Source Contributor
+
 
 **Recommended size:** 500x600px (portrait orientation)
 **Format:** JPG or PNG
