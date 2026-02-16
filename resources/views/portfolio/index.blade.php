@@ -460,7 +460,7 @@
                 
                 <!-- Nama dengan Gradient Text -->
                 <h1 class="text-6xl md:text-7xl font-bold text-white mb-4">
-                    Talita <span class="gradient-text">Bocil</span>
+                    Talita <span class="gradient-text">.</span>
                 </h1>
                 
                 <!-- Title dengan Typewriter Effect -->
