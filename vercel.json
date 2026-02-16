@@ -1,10 +1,11 @@
-{
+﻿{
     "version": 2,
-    "functions": {
-        "api/index.php": {
-            "runtime": "vercel-php@0.6.2"
+    "builds": [
+        {
+            "src": "api/index.php",
+            "use": "vercel-php@0.6.2"
         }
-    },
+    ],
     "routes": [
         {
             "src": "/(.*)",
@@ -12,14 +13,13 @@
         }
     ],
     "outputDirectory": "public",
-    "builds": [
-        {
-            "src": "api/index.php",
-            "use": "vercel-php@0.6.2"
-        },
-        {
-            "src": "public/**",
-            "use": "@vercel/static"
-        }
-    ]
+    "env": {
+        "APP_STORAGE": "/tmp/storage",
+        "VIEW_COMPILED_PATH": "/tmp/storage/framework/views",
+        "APP_SERVICES_CACHE": "/tmp/services.php",
+        "APP_PACKAGES_CACHE": "/tmp/packages.php",
+        "APP_CONFIG_CACHE": "/tmp/config.php",
+        "APP_ROUTES_CACHE": "/tmp/routes.php",
+        "APP_EVENTS_CACHE": "/tmp/events.php"
+    }
 }
