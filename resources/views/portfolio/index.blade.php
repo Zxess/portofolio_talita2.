@@ -679,10 +679,10 @@
     <div class="voice-note-card">
         <div class="voice-note-header">
             <div class="voice-note-avatar">
-                <img src="{{ asset('images/talita.jpeg') }}" alt="Talita">
+                <img src="{{ asset('images/ardi.jpeg') }}" alt="ardi">
             </div>
             <div class="voice-note-info">
-                <h4>Talita's Voice Note</h4>
+                <h4>develover voice</h4>
                 <p>klik play untuk dengar 😊</p>
             </div>
             <button class="voice-close-btn" onclick="closeVoiceNote()">
@@ -713,12 +713,12 @@
         
         <div class="voice-message">
             <i class="fas fa-quote-left"></i>
-            Halo! Aku Talita. Makasih udah mampir ke portofolio aku. Jangan lupa follow ig aku ya! 😘
+            Hallo talita! Aku siapa ya??? aku cuma develover biasa yang suka ngoding, tapi aku punya suara yang bisa bikin kamu senyum-senyum sendiri. Dengerin ya, siapa tau kamu suka! 😊
         </div>
         
         <!-- Audio element untuk voice note -->
         <audio id="voiceAudio" loop>
-            <source src="{{ asset('audio/voice-note.mp3') }}" type="audio/mpeg">
+            <source src="{{ asset('audios/voice.mp3') }}" type="audio/mpeg">
         </audio>
     </div>
 </div>
